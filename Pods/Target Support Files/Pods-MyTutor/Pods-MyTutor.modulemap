@@ -1,0 +1,6 @@
+framework module Pods_MyTutor {
+  umbrella header "Pods-MyTutor-umbrella.h"
+
+  export *
+  module * { export * }
+}
