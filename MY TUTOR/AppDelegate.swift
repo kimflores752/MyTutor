@@ -16,6 +16,7 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     
     var window: UIWindow?
+    var signInCallback: (()->())?
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         
@@ -49,14 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         }
     }
     
-    /* func application(application: UIApplication, openURL url: URL, sourceApplication: String?, annotation: AnyObject?)
-     {
-     
-     return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: sourceApplication, annotation: annotation)
-     
-     }
-     
-     */
+    
     
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [ : ]) -> Bool {
         
@@ -72,47 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
      */
     
     
-    /* func application(application: UIApplication,
-     openURL url: NSURL, options: [String: AnyObject]) -> Bool {
-     return GIDSignIn.sharedInstance().handleURL(url,
-     sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String,
-     annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
-     }
-     
-     func application(application: UIApplication,
-     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-     var options: [String: AnyObject] = [UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication,
-     UIApplicationOpenURLOptionsAnnotationKey: annotation]
-     return GIDSignIn.sharedInstance().handleURL(url,
-     sourceApplication: sourceApplication,
-     annotation: annotation)
-     }
-     
-     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
-     withError error: NSError!) {
-     if (error == nil) {
-     // Perform any operations on signed in user here.
-     let userId = user.userID                  // For client-side use only!
-     let idToken = user.authentication.idToken // Safe to send to the server
-     let fullName = user.profile.name
-     let givenName = user.profile.givenName
-     let familyName = user.profile.familyName
-     let email = user.profile.email
-     // ...
-     } else {
-     print("\(error.localizedDescription)")
-     }
-     }
-     
-     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
-     withError error: NSError!) {
-     // Perform any operations when the user disconnects from app here.
-     // ...
-     }
-     
-     
-     
-     */
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
